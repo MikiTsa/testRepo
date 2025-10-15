@@ -5,7 +5,7 @@ class Equipment(
     val muscleGroup: MuscleGroups,
     val weightLimit: Int,
     val price: Double,
-    val brand: Brand
+    val manufacturer: Manufacturer
 ) : Comparable<Equipment> {
 
     override fun compareTo(other: Equipment): Int {
@@ -13,12 +13,6 @@ class Equipment(
     }
 
     override fun toString(): String {
-        return """
-            Equipment: $name
-              Muscle Group: $muscleGroup
-              Weight Limit: ${weightLimit}kg
-              Price: $$price
-              Brand: $brand
-        """.trimIndent()
+        return "\n(name='$name',\nmuscleGroup='$muscleGroup',\nweightLimit=$weightLimit,\nprice=$price,\nmanufacturer=$manufacturer)\n"
     }
 }

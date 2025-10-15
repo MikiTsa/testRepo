@@ -7,13 +7,87 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <ImageView
+        android:id="@+id/equipmentImage"
+        android:layout_width="557dp"
+        android:layout_height="858dp"
+        android:background="#FFFFFF"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fitnesscenterimage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!-- Add Button inside white square -->
+
+    <!-- About Button inside white square -->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="266dp"
+        android:layout_height="299dp"
+        android:alpha="0.8"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/blank" />
+
+    <!-- Exit Button inside white square -->
+
+
+    <Button
+        android:id="@+id/buttonScanQR"
+        style="@style/GrayButtonStyle"
+        android:text="@string/scan_qr_code"
+        android:drawableLeft="@drawable/qr"
+        app:layout_constraintEnd_toEndOf="@+id/buttonAdd"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/buttonAbout"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAbout" />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        style="@style/GrayButtonStyle"
+        android:text="@string/add"
+        android:drawableLeft="@drawable/weighticon"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <Button
+        android:id="@+id/buttonAbout"
+        style="@style/GrayButtonStyle"
+        android:text="@string/about"
+        android:drawableLeft="@drawable/about"
+        app:layout_constraintEnd_toEndOf="@+id/buttonAdd"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/buttonAdd"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAdd" />
+
+    <Button
+        android:id="@+id/buttonExit"
+        style="@style/ExitButtonStyle"
+        android:text="@string/exit"
+        android:drawableLeft="@drawable/exit"
+        app:layout_constraintEnd_toEndOf="@+id/buttonScanQR"
+        app:layout_constraintStart_toStartOf="@+id/buttonScanQR"
+        app:layout_constraintTop_toBottomOf="@+id/buttonScanQR" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/app_name"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
