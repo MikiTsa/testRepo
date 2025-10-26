@@ -1,17 +1,9 @@
 <resources>
-    <string name="app_name">Fitness Center App</string>
-    <string name="add">Add</string>
-    <string name="about">About</string>
-    <string name="scan_qr_code">Scan QR Code</string>
-    <string name="exit">Exit</string>
-    <string name="equimpent_name">Equimpent Name</string>
-    <string name="weight_limit">Weight Limit</string>
-    <string name="price">Price</string>
-    <string name="submit">Submit</string>
-    <string name="manufacturer">Manufacturer</string>
-    <string name="muscle_group">Muscle Group</string>
-    <string name="app_version">Version 3.0</string>
-    <string name="author">Author: Mihail Trajkoski</string>
-    <string name="app_description">This app allows users to manage gym equipment.</string>
-    <string name="welcome_message">Welcome, %1$s! You have %2$d equipment items in the list.</string>
+    <string name="app_name">FitnessCenterApp</string>
+    <string name="app_title">Fitness Center Manager</string>
+    <string name="btn_add">Add</string>
+    <string name="btn_qr">Scan QR Code</string>
+    <string name="btn_info">Info</string>
+    <string name="btn_about">About</string>
+    <string name="btn_exit">Exit</string>
 </resources>

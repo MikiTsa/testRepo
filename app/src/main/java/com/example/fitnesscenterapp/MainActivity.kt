@@ -11,10 +11,9 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fitnesscenterapp.databinding.ActivityMainBinding
 import com.example.lib.Equipment
-import com.example.lib.Manufacturer
+import com.example.lib.Brand
 import com.example.lib.MuscleGroups
 import io.github.serpro69.kfaker.Faker
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,12 +21,7 @@ class MainActivity : AppCompatActivity() {
     private val equipmentList = ArrayList<Equipment>()
     private val faker = Faker()
 
-    companion object {
-        const val SCAN_QR_CODE_REQUEST = 1001
-    }
-
-    // handle the result from InputActivity
-    private val inputActivityResultLauncher: ActivityResultLauncher<Intent> =
+    private val addActivityResultLauncher: ActivityResultLauncher<Intent> =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
             if (result.resultCode == Activity.RESULT_OK) {
                 val data: Intent? = result.data
@@ -35,12 +29,14 @@ class MainActivity : AppCompatActivity() {
                     val name = data.getStringExtra("name")
                     val weightLimit = data.getIntExtra("weightLimit", -1)
                     val price = data.getDoubleExtra("price", -1.0)
-                    val manufacturerName = data.getStringExtra("manufacturerName")
+                    val brandName = data.getStringExtra("brandName")
                     val muscleGroupEnum = data.getSerializableExtra("muscleGroup") as MuscleGroups?
 
-                    if (name != null && weightLimit != -1 && price != -1.0 && manufacturerName != null && muscleGroupEnum != null) {
-                        val manufacturer = Manufacturer(
-                            name = manufacturerName,
+                    if (name != null && weightLimit != -1 && price != -1.0 &&
+                        brandName != null && muscleGroupEnum != null) {
+
+                        val brand = Brand(
+                            name = brandName,
                             country = faker.address.country(),
                             foundedYear = (1900..2023).random()
                         )
@@ -50,14 +46,12 @@ class MainActivity : AppCompatActivity() {
                             muscleGroupEnum,
                             weightLimit,
                             price,
-                            manufacturer
+                            brand
                         )
 
                         equipmentList.add(newEquipment)
                         Log.d("MainActivity", "Equipment added: $newEquipment")
-                        Toast.makeText(this, "Equipment added!", Toast.LENGTH_SHORT).show()
-                    } else {
-                        Toast.makeText(this,"Failed to add equipment. Missing data!",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Equipment added successfully!", Toast.LENGTH_SHORT).show()
                     }
                 } else {
                     Log.e("MainActivity", "Intent data was null")
@@ -67,26 +61,32 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val userName = "Mihail"
-        val welcomeMessage = getString(R.string.welcome_message, userName, equipmentList.size)
-        Toast.makeText(this, welcomeMessage, Toast.LENGTH_LONG).show()
+        setupClickListeners()
+    }
 
+    private fun setupClickListeners() {
         binding.buttonAdd.setOnClickListener {
-            val intent = Intent(this, InputActivity::class.java)
-            inputActivityResultLauncher.launch(intent)
+            val intent = Intent(this, AddActivity::class.java)
+            addActivityResultLauncher.launch(intent)
+        }
+
+        binding.buttonQR.setOnClickListener {
+            val intent = Intent(this, ScannerActivity::class.java)
+            addActivityResultLauncher.launch(intent)
+        }
+
+        binding.buttonInfo.setOnClickListener {
+            val count = equipmentList.size
+            Log.i("MainActivity", "Number of equipment items in list: $count")
         }
 
         binding.buttonAbout.setOnClickListener {
             val intent = Intent(this, AboutActivity::class.java)
             startActivity(intent)
-        }
-
-        binding.buttonScanQR.setOnClickListener {
-            val intent = Intent(this, ScannerActivity::class.java)
-            startActivityForResult(intent, SCAN_QR_CODE_REQUEST)
         }
 
         binding.buttonExit.setOnClickListener {

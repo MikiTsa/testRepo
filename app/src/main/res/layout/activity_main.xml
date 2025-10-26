@@ -9,85 +9,113 @@
 
     <ImageView
         android:id="@+id/equipmentImage"
-        android:layout_width="557dp"
-        android:layout_height="858dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="#FFFFFF"
         android:scaleType="centerCrop"
         android:src="@drawable/fitnesscenterimage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Add Button inside white square -->
-
-    <!-- About Button inside white square -->
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="266dp"
-        android:layout_height="299dp"
-        android:alpha="0.8"
-        android:scaleType="centerCrop"
+        android:id="@+id/containerBox"
+        android:layout_width="280dp"
+        android:layout_height="360dp"
+        android:alpha="0.66"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/blank" />
 
-    <!-- Exit Button inside white square -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/app_title"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        app:layout_constraintEnd_toEndOf="@id/containerBox"
+        app:layout_constraintStart_toStartOf="@id/containerBox"
+        app:layout_constraintTop_toTopOf="@id/containerBox" />
 
-
-    <Button
-        android:id="@+id/buttonScanQR"
-        style="@style/GrayButtonStyle"
-        android:text="@string/scan_qr_code"
-        android:drawableLeft="@drawable/qr"
-        app:layout_constraintEnd_toEndOf="@+id/buttonAdd"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/buttonAbout"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAbout" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
     <Button
         android:id="@+id/buttonAdd"
-        style="@style/GrayButtonStyle"
-        android:text="@string/add"
-        android:drawableLeft="@drawable/weighticon"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#333333"
+        android:paddingVertical="14dp"
+        android:text="@string/btn_add"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/containerBox"
+        app:layout_constraintStart_toStartOf="@id/containerBox"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <Button
+        android:id="@+id/buttonQR"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#003504"
+        android:paddingVertical="14dp"
+        android:text="@string/btn_qr"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/buttonAdd"
+        app:layout_constraintStart_toStartOf="@id/buttonAdd"
+        app:layout_constraintTop_toBottomOf="@id/buttonAdd" />
+
+    <!-- Update buttonInfo margin -->
+    <Button
+        android:id="@+id/buttonInfo"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="#333333"
+        android:paddingVertical="14dp"
+        android:text="@string/btn_info"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical_center"
+        app:layout_constraintStart_toStartOf="@id/buttonAdd"
+        app:layout_constraintTop_toBottomOf="@id/buttonQR" />
 
     <Button
         android:id="@+id/buttonAbout"
-        style="@style/GrayButtonStyle"
-        android:text="@string/about"
-        android:drawableLeft="@drawable/about"
-        app:layout_constraintEnd_toEndOf="@+id/buttonAdd"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/buttonAdd"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAdd" />
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:backgroundTint="#333333"
+        android:paddingVertical="14dp"
+        android:text="@string/btn_about"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/buttonAdd"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical_center"
+        app:layout_constraintTop_toTopOf="@id/buttonInfo" />
 
     <Button
         android:id="@+id/buttonExit"
-        style="@style/ExitButtonStyle"
-        android:text="@string/exit"
-        android:drawableLeft="@drawable/exit"
-        app:layout_constraintEnd_toEndOf="@+id/buttonScanQR"
-        app:layout_constraintStart_toStartOf="@+id/buttonScanQR"
-        app:layout_constraintTop_toBottomOf="@+id/buttonScanQR" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/app_name"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#FB0101"
+        android:paddingVertical="14dp"
+        android:text="@string/btn_exit"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/buttonAdd"
+        app:layout_constraintStart_toStartOf="@id/buttonAdd"
+        app:layout_constraintTop_toBottomOf="@id/buttonInfo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

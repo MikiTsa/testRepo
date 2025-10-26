@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "FitnessCenterApp"
 include(":app")
 include(":lib")
+include(":lib")

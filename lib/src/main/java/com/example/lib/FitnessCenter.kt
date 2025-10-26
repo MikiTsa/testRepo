@@ -6,11 +6,12 @@ class FitnessCenter(
     val location: String,
     val equipmentList: MutableList<Equipment>
 ) {
-    fun addEquipment(equipment: Equipment) {
-        equipmentList.add(equipment)
-    }
-
     override fun toString(): String {
-        return "FitnessCenter (id = $id, \nname = '$name',\nlocation = '$location',\nequipmentList = $equipmentList)\n"
+        return """
+            Fitness Center: $name
+            ID: $id
+            Location: $location
+            Total Equipment: ${equipmentList.size}
+        """.trimIndent()
     }
 }
