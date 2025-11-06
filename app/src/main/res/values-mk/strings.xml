@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Fitness Center App</string>
-    <string name="add">Додај</string>
-    <string name="info">Инфо</string>
-    <string name="about">Информации</string>
-    <string name="scan_qr_code">Скенирај QR код</string>
-    <string name="exit">Излез</string>
+    <string name="app_title">Менаџер на спортска опрема</string>
+    <string name="btn_add">Додај</string>
+    <string name="btn_info">Инфо</string>
+    <string name="btn_about">Податоци</string>
+    <string name="btn_qr">Скенирај QR код</string>
+    <string name="btn_exit">Излез</string>
     <string name="equipment_name">Име</string>
     <string name="weight_limit">Максимална тежина</string>
     <string name="price">Цена</string>
     <string name="submit">Додај</string>
+    <string name="about">Податоци</string>
     <string name="brand">Бренд</string>
     <string name="muscle_group">Мускулна група</string>
     <string name="app_version">Верзија 3.0</string>
     <string name="author">Автор: Михаил Трајкоски</string>
-    <string name="app_description">Оваа апликација е за уредување опрема за вежбање</string>
     <string name="welcome_message">Добредојде, %1$s! Имаш %2$d опрема во листата.</string>
+    <string name="app_description_html"><![CDATA[
+    Оваа апликација е за уредување <i>опрема за вежбање</i> ефикасно.<br/><br/>
+    Карактеристики:<br/>
+    • Додавање опрема<br/>
+    • Додавање опрема преку скенирање на код<br/>
+    • Повеќејазична поддршка
+]]></string>
 </resources>

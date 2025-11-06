@@ -16,8 +16,10 @@
         android:src="@drawable/fitnesscenterimage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/containerBox"
@@ -37,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/app_title"
-        android:textSize="20sp"
+        android:textSize="@dimen/text_size_large"
         android:textStyle="bold"
         android:textColor="#333333"
         app:layout_constraintEnd_toEndOf="@id/containerBox"
@@ -56,10 +58,10 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:backgroundTint="#333333"
+        android:backgroundTint="@color/button_background_gray"
         android:paddingVertical="14dp"
         android:text="@string/btn_add"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_medium"
         app:layout_constraintEnd_toEndOf="@id/containerBox"
         app:layout_constraintStart_toStartOf="@id/containerBox"
         app:layout_constraintTop_toBottomOf="@id/tvTitle" />
@@ -72,22 +74,21 @@
         android:backgroundTint="#003504"
         android:paddingVertical="14dp"
         android:text="@string/btn_qr"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_medium"
         app:layout_constraintEnd_toEndOf="@id/buttonAdd"
         app:layout_constraintStart_toStartOf="@id/buttonAdd"
         app:layout_constraintTop_toBottomOf="@id/buttonAdd" />
 
-    <!-- Update buttonInfo margin -->
     <Button
         android:id="@+id/buttonInfo"
         android:layout_width="95dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="4dp"
-        android:backgroundTint="#333333"
+        android:backgroundTint="@color/button_background_gray"
         android:paddingVertical="14dp"
         android:text="@string/btn_info"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_medium"
         app:layout_constraintEnd_toStartOf="@id/guideline_vertical_center"
         app:layout_constraintStart_toStartOf="@id/buttonAdd"
         app:layout_constraintTop_toBottomOf="@id/buttonQR" />
@@ -97,10 +98,10 @@
         android:layout_width="95dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:backgroundTint="#333333"
+        android:backgroundTint="@color/button_background_gray"
         android:paddingVertical="14dp"
         android:text="@string/btn_about"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_medium"
         app:layout_constraintEnd_toEndOf="@id/buttonAdd"
         app:layout_constraintStart_toEndOf="@id/guideline_vertical_center"
         app:layout_constraintTop_toTopOf="@id/buttonInfo" />
@@ -110,10 +111,10 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:backgroundTint="#FB0101"
+        android:backgroundTint="@color/button_background_red"
         android:paddingVertical="14dp"
         android:text="@string/btn_exit"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_medium"
         app:layout_constraintEnd_toEndOf="@id/buttonAdd"
         app:layout_constraintStart_toStartOf="@id/buttonAdd"
         app:layout_constraintTop_toBottomOf="@id/buttonInfo" />

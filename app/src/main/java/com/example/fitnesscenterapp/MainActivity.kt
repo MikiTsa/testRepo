@@ -9,6 +9,7 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import com.example.fitnesscenterapp.databinding.ActivityMainBinding
 import com.example.lib.Equipment
 import com.example.lib.Brand
@@ -63,8 +64,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        applyCustomFont()
 
-        // DEMONSTRATION: getString() with multiple arguments
         val userName = "Mihail"
         val welcomeMessage = getString(R.string.welcome_message, userName, equipmentList.size)
         Toast.makeText(this, welcomeMessage, Toast.LENGTH_LONG).show()
@@ -75,10 +76,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonInfo.setOnClickListener {
-            // DEMONSTRATION: getString() with arguments - showing equipment count
             val count = equipmentList.size
-            val infoMessage = getString(R.string.welcome_message, userName, count)
-            Toast.makeText(this, infoMessage, Toast.LENGTH_LONG).show()
             Log.i("MainActivity", "Number of equipment items in list: $count")
         }
 
@@ -94,6 +92,15 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonExit.setOnClickListener {
             finish()
+        }
+    }
+
+    private fun applyCustomFont() {
+        try {
+            val typeface = ResourcesCompat.getFont(this, R.font.custom_font)
+            binding.tvTitle.typeface = typeface
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 }
