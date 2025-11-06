@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    preferences.xml - Settings definitions for SettingsActivity
+
+    TASK 4 REQUIREMENT 4: Define at least 2 meaningful settings
+
+    This file defines:
+    1. What settings the app has
+    2. Their keys (used to save/load from SharedPreferences)
+    3. Their UI appearance
+
+    Location after saving:
+    /data/data/com.example.fitnesscenterapp/shared_prefs/com.example.fitnesscenterapp_preferences.xml
+-->
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Category: General Settings -->
+    <PreferenceCategory app:title="General Settings">
+
+        <!-- Setting 1: Equipment Name Prefix -->
+        <EditTextPreference
+            app:key="equipment_prefix"
+            app:title="Equipment Name Prefix"
+            app:summary="Add a custom prefix to equipment names (e.g., 'Pro-' for 'Pro-Treadmill')"
+            app:defaultValue=""
+            app:useSimpleSummaryProvider="true" />
+
+        <!-- Setting 2: Show Prices Toggle -->
+        <SwitchPreferenceCompat
+            app:key="show_prices"
+            app:title="Show Equipment Prices"
+            app:summary="Display or hide equipment prices in the app"
+            app:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <!-- Category: Display Settings -->
+    <PreferenceCategory app:title="Display Settings">
+
+        <!-- Setting 3: Theme preference (bonus) -->
+        <ListPreference
+            app:key="theme_preference"
+            app:title="App Theme"
+            app:summary="Choose light or dark theme"
+            app:entries="@array/theme_entries"
+            app:entryValues="@array/theme_values"
+            app:defaultValue="light"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <!-- Category: About -->
+    <PreferenceCategory app:title="About">
+
+        <!-- Info preference (not editable, just displays info) -->
+        <Preference
+            app:title="App Version"
+            app:summary="Version 4.0 - Task 4 Implementation"
+            app:selectable="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
