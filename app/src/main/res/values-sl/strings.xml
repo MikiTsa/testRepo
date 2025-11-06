@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fitness Center App</string>
+    <string name="add">Dodaj</string>
+    <string name="info">Info</string>
+    <string name="about">Informacije</string>
+    <string name="scan_qr_code">Skeniraj QR kodo</string>
+    <string name="exit">Izhod</string>
+    <string name="equipment_name">Ime</string>
+    <string name="weight_limit">Maksimalna težina</string>
+    <string name="price">Cena</string>
+    <string name="submit">Dodaj</string>
+    <string name="brand">Znamka</string>
+    <string name="muscle_group">Mišična skupina</string>
+    <string name="app_version">Verzija 3.0</string>
+    <string name="author">Avtor: Mihail Trajkoski</string>
+    <string name="app_description">Ta aplikacija omogoča upravljanje telovadne opreme.</string>
+    <string name="welcome_message">Dobrodošel, %1$s! Imate %2$d opreme v seznamu!</string>
+</resources>

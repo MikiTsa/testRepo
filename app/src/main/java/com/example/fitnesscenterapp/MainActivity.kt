@@ -61,32 +61,35 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupClickListeners()
-    }
+        // DEMONSTRATION: getString() with multiple arguments
+        val userName = "Mihail"
+        val welcomeMessage = getString(R.string.welcome_message, userName, equipmentList.size)
+        Toast.makeText(this, welcomeMessage, Toast.LENGTH_LONG).show()
 
-    private fun setupClickListeners() {
         binding.buttonAdd.setOnClickListener {
             val intent = Intent(this, AddActivity::class.java)
             addActivityResultLauncher.launch(intent)
         }
 
-        binding.buttonQR.setOnClickListener {
-            val intent = Intent(this, ScannerActivity::class.java)
-            addActivityResultLauncher.launch(intent)
-        }
-
         binding.buttonInfo.setOnClickListener {
+            // DEMONSTRATION: getString() with arguments - showing equipment count
             val count = equipmentList.size
+            val infoMessage = getString(R.string.welcome_message, userName, count)
+            Toast.makeText(this, infoMessage, Toast.LENGTH_LONG).show()
             Log.i("MainActivity", "Number of equipment items in list: $count")
         }
 
         binding.buttonAbout.setOnClickListener {
             val intent = Intent(this, AboutActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.buttonQR.setOnClickListener {
+            val intent = Intent(this, ScannerActivity::class.java)
+            addActivityResultLauncher.launch(intent)
         }
 
         binding.buttonExit.setOnClickListener {
