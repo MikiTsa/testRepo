@@ -24,4 +24,12 @@
     • Dodajanje opremo s skeniranjem QR kodo<br/>
     • Večjezična podpora
 ]]></string>
+    <string name="settings">Settings</string>
+    <string name="uuid_loading">UUID: Loading...</string>
+    <string name="cancel">Preklici</string>
+    <string name="save">Shrani</string>
+    <string name="enter_maximum_equipment">Vnos maksimalno st. opremo</string>
+    <string name="max_equipment_count">Max opremo st:</string>
+    <string name="enter_gym_name">Vnos ime fitnesa:</string>
+    <string name="gym_name">Ime fitnesa:</string>
 </resources>

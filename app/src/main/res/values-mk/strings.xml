@@ -24,4 +24,12 @@
     • Додавање опрема преку скенирање на код<br/>
     • Повеќејазична поддршка
 ]]></string>
+    <string name="settings">Поставки</string>
+    <string name="uuid_loading">UUID: Loading...</string>
+    <string name="cancel">Откажи</string>
+    <string name="save">Зачувај</string>
+    <string name="enter_maximum_equipment">Внеси максимален број</string>
+    <string name="max_equipment_count">Максимален број:</string>
+    <string name="enter_gym_name">Внеси име на теретана</string>
+    <string name="gym_name">Име на теретанаЧ</string>
 </resources>

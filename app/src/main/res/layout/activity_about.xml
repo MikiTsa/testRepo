@@ -17,6 +17,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/settings"
+        android:padding="8dp"
+        android:src="@drawable/ic_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/equipmentImage" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_image_bottom"
         android:layout_width="wrap_content"
@@ -75,6 +87,18 @@
         app:layout_constraintTop_toBottomOf="@id/appVersion" />
 
     <TextView
+        android:id="@+id/appUUID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/uuid_loading"
+        android:textSize="@dimen/text_size_small"
+        android:textColor="#999999"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appAuthor" />
+
+    <TextView
         android:id="@+id/appDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -86,6 +110,6 @@
         android:textColor="#999999"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appAuthor" />
+        app:layout_constraintTop_toBottomOf="@id/appUUID" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

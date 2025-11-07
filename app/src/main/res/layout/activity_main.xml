@@ -55,10 +55,12 @@
 
     <Button
         android:id="@+id/buttonAdd"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:backgroundTint="@color/button_background_gray"
+        android:drawableLeft="@drawable/ic_weight"
+        android:drawablePadding="8dp"
         android:paddingVertical="14dp"
         android:text="@string/btn_add"
         android:textSize="@dimen/text_size_medium"
@@ -68,10 +70,12 @@
 
     <Button
         android:id="@+id/buttonQR"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:backgroundTint="#003504"
+        android:drawableLeft="@drawable/ic_qr"
+        android:drawablePadding="8dp"
         android:paddingVertical="14dp"
         android:text="@string/btn_qr"
         android:textSize="@dimen/text_size_medium"
@@ -81,11 +85,13 @@
 
     <Button
         android:id="@+id/buttonInfo"
-        android:layout_width="95dp"
+        android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="4dp"
         android:backgroundTint="@color/button_background_gray"
+        android:drawableLeft="@drawable/ic_info"
+        android:drawablePadding="4dp"
         android:paddingVertical="14dp"
         android:text="@string/btn_info"
         android:textSize="@dimen/text_size_medium"
@@ -95,10 +101,12 @@
 
     <Button
         android:id="@+id/buttonAbout"
-        android:layout_width="95dp"
-        android:layout_height="wrap_content"
+        android:layout_width="115dp"
+        android:layout_height="0dp"
         android:layout_marginStart="4dp"
         android:backgroundTint="@color/button_background_gray"
+        android:drawableLeft="@drawable/ic_about"
+        android:drawablePadding="4dp"
         android:paddingVertical="14dp"
         android:text="@string/btn_about"
         android:textSize="@dimen/text_size_medium"
@@ -108,10 +116,11 @@
 
     <Button
         android:id="@+id/buttonExit"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:backgroundTint="@color/button_background_red"
+        android:drawableLeft="@drawable/ic_exit"
         android:paddingVertical="14dp"
         android:text="@string/btn_exit"
         android:textSize="@dimen/text_size_medium"

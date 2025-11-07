@@ -21,7 +21,15 @@
     This application helps you <i>manage gym equipment</i> efficiently.<br/><br/>
     Features:<br/>
     • Add equipment<br/>
-    • Scan QR codes<br/>
+    • Add equipment by scanning QR code<br/>
     • Multi-language support
 ]]></string>
+    <string name="settings">Settings</string>
+    <string name="uuid_loading">UUID: Loading...</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="enter_maximum_equipment">Enter maximum equipment</string>
+    <string name="max_equipment_count">Max Equipment Count:</string>
+    <string name="enter_gym_name">Enter gym name</string>
+    <string name="gym_name">Gym Name:</string>
 </resources>
