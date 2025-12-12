@@ -14,7 +14,7 @@
     <string name="about">Podatke</string>
     <string name="brand">Znamka</string>
     <string name="muscle_group">Mišična skupina</string>
-    <string name="app_version">Verzija 3.0</string>
+    <string name="app_version">Verzija 5.0</string>
     <string name="author">Avtor: Mihail Trajkoski</string>
     <string name="welcome_message">Dobrodošel, %1$s! Imate %2$d opreme v seznamu!</string>
     <string name="app_description_html"><![CDATA[
@@ -32,4 +32,9 @@
     <string name="max_equipment_count">Max opremo st:</string>
     <string name="enter_gym_name">Vnos ime fitnesa:</string>
     <string name="gym_name">Ime fitnesa:</string>
+
+    <string name="equipment_list_title">Seznam opreme</string>
+    <string name="delete_equipment">Izbriši opremo</string>
+    <string name="delete_confirmation">Ali ste prepričani, da želite izbrisati to opremo?</string>
+    <string name="delete">Izbriši</string>
 </resources>

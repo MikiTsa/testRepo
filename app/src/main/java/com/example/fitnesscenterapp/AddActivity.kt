@@ -11,6 +11,8 @@ import com.example.lib.MuscleGroups
 
 class AddActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddBinding
+    private var isEditMode = false
+    private var equipmentId: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,28 +26,32 @@ class AddActivity : AppCompatActivity() {
 
     private fun loadDataFromIntent() {
         val fromQR = intent.getBooleanExtra("fromQR", false)
+        isEditMode = intent.getBooleanExtra("isEditing", false)
 
-        if (fromQR) {
-            val name = intent.getStringExtra("name")
-            val muscleGroupName = intent.getStringExtra("muscleGroup")
-            val weightLimit = intent.getIntExtra("weightLimit", -1)
-            val price = intent.getDoubleExtra("price", -1.0)
-            val brandName = intent.getStringExtra("brandName")
+        if (isEditMode) {
+            equipmentId = intent.getStringExtra("equipmentId")
+            binding.buttonSubmit.text = "Update"
+        }
 
-            name?.let { binding.etEquipmentName.setText(it) }
-            if (weightLimit != -1) {
-                binding.etWeightLimit.setText(weightLimit.toString())
-            }
-            if (price != -1.0) {
-                binding.etPrice.setText(price.toString())
-            }
-            brandName?.let { binding.etBrandName.setText(it) }
+        val name = intent.getStringExtra("name")
+        val muscleGroupName = intent.getStringExtra("muscleGroup")
+        val weightLimit = intent.getIntExtra("weightLimit", -1)
+        val price = intent.getDoubleExtra("price", -1.0)
+        val brandName = intent.getStringExtra("brandName")
 
-            muscleGroupName?.let { mgName ->
-                val position = MuscleGroups.entries.indexOfFirst { it.name == mgName }
-                if (position != -1) {
-                    binding.spinnerMuscleGroup.setSelection(position)
-                }
+        name?.let { binding.etEquipmentName.setText(it) }
+        if (weightLimit != -1) {
+            binding.etWeightLimit.setText(weightLimit.toString())
+        }
+        if (price != -1.0) {
+            binding.etPrice.setText(price.toString())
+        }
+        brandName?.let { binding.etBrandName.setText(it) }
+
+        muscleGroupName?.let { mgName ->
+            val position = MuscleGroups.entries.indexOfFirst { it.name == mgName }
+            if (position != -1) {
+                binding.spinnerMuscleGroup.setSelection(position)
             }
         }
     }
@@ -100,10 +106,15 @@ class AddActivity : AppCompatActivity() {
                 putExtra("weightLimit", weightLimit)
                 putExtra("price", price)
                 putExtra("brandName", brandName)
+                putExtra("isEditing", isEditMode)
+                if (isEditMode) {
+                    putExtra("equipmentId", equipmentId)
+                }
             }
 
             setResult(Activity.RESULT_OK, resultIntent)
-            Toast.makeText(this, "Equipment data submitted!", Toast.LENGTH_SHORT).show()
+            val message = if (isEditMode) "Equipment updated!" else "Equipment added!"
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
             finish()
         }
     }

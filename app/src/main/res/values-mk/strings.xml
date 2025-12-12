@@ -14,7 +14,7 @@
     <string name="about">Податоци</string>
     <string name="brand">Бренд</string>
     <string name="muscle_group">Мускулна група</string>
-    <string name="app_version">Верзија 3.0</string>
+    <string name="app_version">Верзија 5.0</string>
     <string name="author">Автор: Михаил Трајкоски</string>
     <string name="welcome_message">Добредојде, %1$s! Имаш %2$d опрема во листата.</string>
     <string name="app_description_html"><![CDATA[
@@ -31,5 +31,10 @@
     <string name="enter_maximum_equipment">Внеси максимален број</string>
     <string name="max_equipment_count">Максимален број:</string>
     <string name="enter_gym_name">Внеси име на теретана</string>
-    <string name="gym_name">Име на теретанаЧ</string>
+    <string name="gym_name">Име на теретана:</string>
+
+    <string name="equipment_list_title">Листа на опрема</string>
+    <string name="delete_equipment">Избриши опрема</string>
+    <string name="delete_confirmation">Дали сте сигурни дека сакате да ја избришете оваа опрема?</string>
+    <string name="delete">Избриши</string>
 </resources>

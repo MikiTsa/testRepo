@@ -7,125 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/equipmentImage"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#FFFFFF"
-        android:scaleType="centerCrop"
-        android:src="@drawable/fitnesscenterimage"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/containerBox"
-        android:layout_width="280dp"
-        android:layout_height="360dp"
-        android:alpha="0.66"
-        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/blank" />
-
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/app_title"
-        android:textSize="@dimen/text_size_large"
-        android:textStyle="bold"
-        android:textColor="#333333"
-        app:layout_constraintEnd_toEndOf="@id/containerBox"
-        app:layout_constraintStart_toStartOf="@id/containerBox"
-        app:layout_constraintTop_toTopOf="@id/containerBox" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_vertical_center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
-
-    <Button
-        android:id="@+id/buttonAdd"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/button_background_gray"
-        android:drawableLeft="@drawable/ic_weight"
-        android:drawablePadding="8dp"
-        android:paddingVertical="14dp"
-        android:text="@string/btn_add"
-        android:textSize="@dimen/text_size_medium"
-        app:layout_constraintEnd_toEndOf="@id/containerBox"
-        app:layout_constraintStart_toStartOf="@id/containerBox"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
-
-    <Button
-        android:id="@+id/buttonQR"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="#003504"
-        android:drawableLeft="@drawable/ic_qr"
-        android:drawablePadding="8dp"
-        android:paddingVertical="14dp"
-        android:text="@string/btn_qr"
-        android:textSize="@dimen/text_size_medium"
-        app:layout_constraintEnd_toEndOf="@id/buttonAdd"
-        app:layout_constraintStart_toStartOf="@id/buttonAdd"
-        app:layout_constraintTop_toBottomOf="@id/buttonAdd" />
-
-    <Button
-        android:id="@+id/buttonInfo"
-        android:layout_width="115dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="4dp"
-        android:backgroundTint="@color/button_background_gray"
-        android:drawableLeft="@drawable/ic_info"
-        android:drawablePadding="4dp"
-        android:paddingVertical="14dp"
-        android:text="@string/btn_info"
-        android:textSize="@dimen/text_size_medium"
-        app:layout_constraintEnd_toStartOf="@id/guideline_vertical_center"
-        app:layout_constraintStart_toStartOf="@id/buttonAdd"
-        app:layout_constraintTop_toBottomOf="@id/buttonQR" />
-
-    <Button
-        android:id="@+id/buttonAbout"
-        android:layout_width="115dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="4dp"
-        android:backgroundTint="@color/button_background_gray"
-        android:drawableLeft="@drawable/ic_about"
-        android:drawablePadding="4dp"
-        android:paddingVertical="14dp"
-        android:text="@string/btn_about"
-        android:textSize="@dimen/text_size_medium"
-        app:layout_constraintEnd_toEndOf="@id/buttonAdd"
-        app:layout_constraintStart_toEndOf="@id/guideline_vertical_center"
-        app:layout_constraintTop_toTopOf="@id/buttonInfo" />
-
-    <Button
-        android:id="@+id/buttonExit"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@color/button_background_red"
-        android:drawableLeft="@drawable/ic_exit"
-        android:paddingVertical="14dp"
-        android:text="@string/btn_exit"
-        android:textSize="@dimen/text_size_medium"
-        app:layout_constraintEnd_toEndOf="@id/buttonAdd"
-        app:layout_constraintStart_toStartOf="@id/buttonAdd"
-        app:layout_constraintTop_toBottomOf="@id/buttonInfo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,9 +4,12 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
+import com.example.lib.Brand
 import com.example.lib.Equipment
+import com.example.lib.MuscleGroups
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import io.github.serpro69.kfaker.Faker
 import org.apache.commons.io.FileUtils
 import java.io.File
 import java.io.IOException
@@ -22,6 +25,7 @@ class MyApplication : Application() {
     private lateinit var sharedPref: SharedPreferences
     private lateinit var gson: Gson
     private lateinit var file: File
+    private val faker = Faker()
 
     override fun onCreate() {
         super.onCreate()
@@ -43,8 +47,15 @@ class MyApplication : Application() {
             Log.d(TAG, "App UUID already exists: ${getID()}")
         }
 
-        // Load equipment data from JSON file (Requirement 3)
         loadFromFile()
+
+        // Generate 100 items
+        if (equipmentList.isEmpty()) {
+            Log.d(TAG, "Generating 100 equipment items...")
+            generate100Equipment()
+            saveToFile()
+            Log.d(TAG, "Generated and saved 100 equipment items")
+        }
     }
 
     fun saveToFile() {
@@ -52,7 +63,6 @@ class MyApplication : Application() {
             val jsonString = gson.toJson(equipmentList)
             FileUtils.writeStringToFile(file, jsonString, "UTF-8")
             Log.d(TAG, "Successfully saved ${equipmentList.size} items to file")
-            Log.d(TAG, "File content: $jsonString")
         } catch (e: IOException) {
             Log.e(TAG, "Error saving to file: ${file.absolutePath}", e)
         }
@@ -62,7 +72,7 @@ class MyApplication : Application() {
         try {
             if (file.exists()) {
                 val jsonString = FileUtils.readFileToString(file, "UTF-8")
-                Log.d(TAG, "Reading from file: $jsonString")
+                Log.d(TAG, "Reading from file...")
 
                 val type = object : TypeToken<ArrayList<Equipment>>() {}.type
                 val loadedList: ArrayList<Equipment> = gson.fromJson(jsonString, type)
@@ -112,6 +122,49 @@ class MyApplication : Application() {
         return equipmentList.find { it.id == id }
     }
 
+    private fun generate100Equipment() {
+        val brands = generateBrands(10)
+        val equipmentNames = generateEquipmentNames(100)
+
+        for (name in equipmentNames) {
+            val equipment = Equipment(
+                name = name,
+                muscleGroup = MuscleGroups.entries.random(),
+                weightLimit = (8..30).random() * 10,
+                price = (100..10000).random() + (0..99).random() / 100.0,
+                brand = brands.random()
+            )
+            equipmentList.add(equipment)
+        }
+    }
+
+    private fun generateBrands(n: Int): List<Brand> {
+        val brands = mutableListOf<Brand>()
+        for (i in 1..n) {
+            brands.add(
+                Brand(
+                    name = faker.company.name(),
+                    country = faker.address.country(),
+                    foundedYear = (1900..2023).random()
+                )
+            )
+        }
+        return brands
+    }
+
+    private fun generateEquipmentNames(n: Int): List<String> {
+        val equipmentTypes = listOf(
+            "Leg Press", "Chest Press", "Lat Pulldown", "Cable Machine",
+            "Smith Machine", "Squat Rack", "Bench Press",
+            "Barbell Set", "Leg Extension", "Leg Curl", "Shoulder Press",
+            "Hack Squat", "Calf Raise Machine", "Ab Crunch Machine",
+            "Rowing Machine", "Treadmill", "Elliptical", "Stationary Bike"
+        )
+
+        return (1..n).map {
+            equipmentTypes.random() + " #$it"
+        }
+    }
 
     private fun initSharedPreferences() {
         sharedPref = getSharedPreferences(MY_SP_FILE_NAME, Context.MODE_PRIVATE)
@@ -129,6 +182,7 @@ class MyApplication : Application() {
     private fun containsID(): Boolean {
         return sharedPref.contains("ID")
     }
+
     fun getID(): String {
         return sharedPref.getString("ID", "No ID") ?: "No ID"
     }
